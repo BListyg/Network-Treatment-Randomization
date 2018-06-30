@@ -13,4 +13,4 @@ This code provides 3 visualizations of treatment / control groups within a large
 * Nodes
 * Components
 
-!()[https://imgur.com/a/CfkX0Ll]
+![](https://i.imgur.com/v876dTL.png)
