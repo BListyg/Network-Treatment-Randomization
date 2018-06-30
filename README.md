@@ -1,7 +1,4 @@
 # Network-Treatment-Randomization
-`randomizr` is a R package developed by political scientists at Yale.
-
-iGraph is a popular and powerful tool used for analyzing graphs in R.
 
 The inspiration for this code came from background research I did in preparation for a tech talk I gave to my company recently. 
 
