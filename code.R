@@ -111,21 +111,21 @@ final_data <- list(data=d.f,
 #Nothing
 par(mfrow=c(2,2))
 
-plot(tutor_g, vertex.size=8, vertex.label=NA, vertex.color='gray',edge.width=4,vertex.shape='circle',edge.color='black', main='Component Graph\nUntreated',margin=-0.1,cex.main=3)
+plot(tutor_g, vertex.size=4, vertex.label=NA, vertex.color='gray',edge.width=4,vertex.shape='circle',edge.color='black', main='Component Graph\nUntreated',margin=-0.1,cex.main=3)
 
 ###
 #Component Level Randomziation
 E(tutor_g)$comp_treatments <- d.f$component_treatment
 edge.color = c('blue','green')[E(tutor_g)$comp_treatments]
 
-plot(tutor_g, vertex.size=8, vertex.label=NA, vertex.color='gray',edge.width=10,vertex.shape='circle',edge.color=edge.color, main='Component Graph\nRandomization @ Components',margin=-0.1, vertex.label.size=6,cex.main=3)
+plot(tutor_g, vertex.size=4, vertex.label=NA, vertex.color='gray',edge.width=10,vertex.shape='circle',edge.color=edge.color, main='Component Graph\nRandomization @ Components',margin=-0.1, vertex.label.size=6,cex.main=3)
 
 ###
 #All Nodes
 V(tutor_g)$color[V(tutor_g) %in% final_data$node_treatment[,1][which(final_data$node_treatment[,2]==1)]] <- 'indianred'
 V(tutor_g)$color[V(tutor_g) %in% final_data$node_treatment[,1][which(final_data$node_treatment[,2]==2)]] <- 'lightblue'
 
-plot(tutor_g, vertex.size=8, vertex.label=NA,edge.width=7,edge.color='black', main='Component Graph\nRandomization @ Nodes',margin=-0.1,veretx.shape=NA, vertex.label.size=6,cex.main=3)
+plot(tutor_g, vertex.size=4, vertex.label=NA,edge.width=7,edge.color='black', main='Component Graph\nRandomization @ Nodes',margin=-0.1,veretx.shape=NA, vertex.label.size=6,cex.main=3)
 
 ###
 
@@ -133,7 +133,7 @@ E(tutor_g)$edge_treatment <- NA
 E(tutor_g)$edge_treatment <- d.f$edge_treatment
 edge.color = c('gold','turquoise')[E(tutor_g)$edge_treatment]
 
-plot(tutor_g, vertex.size=8, vertex.label=NA, vertex.color='gray',edge.width=10,vertex.shape='circle',edge.color=edge.color, main='Component Graph\nRandomization @ Edges',margin=-0.1, vertex.label.size=6,cex.main=3)
+plot(tutor_g, vertex.size=4, vertex.label=NA, vertex.color='gray',edge.width=10,vertex.shape='circle',edge.color=edge.color, main='Component Graph\nRandomization @ Edges',margin=-0.1, vertex.label.size=6,cex.main=3)
 
 ###
 ###
@@ -152,12 +152,3 @@ plot(tutor_g, vertex.size=8, vertex.label=NA, vertex.color='gray',edge.width=10,
 
 
 ###
-
-cbind(
-  apply(d.f[,c(4,5)], 2, table),
-  table(unique(cbind(d.f$tutor_id,d.f$component_treatment))[,2]),
-  table(unique(cbind(d.f$student_id,d.f$component_treatment))[,2]),
-  table(final_data$node_treatment[,2])
-  )
-
-
