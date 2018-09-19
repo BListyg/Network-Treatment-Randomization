@@ -1,10 +1,8 @@
 # Network-Treatment-Randomization
 
-The inspiration for this code came from background research I did in preparation for a tech talk I gave to my company recently. 
+The inspiration for this code came as a result of independent studying I've been doing on how to conduct randomized control trials (RCTs) on a social network. I found that combining the `igraph` package with the `randomizr` package leads to insightful visualizations of treatment assignment within a graph of disconnected components of varying sizes.
 
-Accompanying preparation for the talk, I've separately been interested in recent work by Susan Athey, Dean Eckles, Johan Ugander, and many other researchers on how to perform randomized control trials (RCT) within social networks.
-
-This R code provides visualizations for 3 separate randomization strategies within an undirected graph. The graphs this code produces differ than those discussed in the aforementioned literature due to the fact that there is independence / non-interference between each graph component / sub-graph. With this in mind, there is no need for any type of complex graph partitioning algorithm to separate the network in such a way that minimizes this unit interference.
+This R code provides visualizations for 3 separate randomization strategies within an undirected component graph. The graphs this code produces differ than those discussed in the exisiting literature on network experiments (e.g. Athey, Eckles, and Imbens, 2015) due to the fact that there is independence / non-interference between each graph component / sub-graph. With this in mind, there is no need for any type of complex graph partitioning algorithm (e.g. the normalized edge cut) to separate the network in such a way that minimizes unit interference.
 
 Treatments can be applied to:
 
